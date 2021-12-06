@@ -19,7 +19,7 @@
     <a href="C:\xampp\htdocs\ZSL\Zadania metematyczne\strona2.php">- Potęgowanie</a>
 
     <h1 id="prostedzialania"><b>PROSTE DZIAŁANIA</b></h1><br>
-
+    <!-- Zmnieniam ID inputów, z diva nie zczytasz value byczq-->
     <div id="liczba1"><i>Podaj pierwszą liczbę</i>:<input type="text" id="l1"></div><br>
     <div id="liczba2"><i>Podaj drugą liczbę</i>:<input type="text" id="l2"></div><br>
 
@@ -30,7 +30,7 @@
         <input type="button" value="DZIELENIE" onclick="dzielenie()">
     </div>
     <script>
-        // Zostawiam niespodziankędla tych co klinkąpo kolei :)
+        // Zostawiam niespodziankędla tych co klinką po kolei :)
         var checkr = [false, false, false];
 
         function suma() {
@@ -50,6 +50,8 @@
             if (checkr[0]) {
 
                 checkr[1] = true;
+            } else {
+                checkr = [false, false, false];
             }
             alert(a - b);
         }
@@ -60,8 +62,10 @@
             a = parseFloat(a);
             b = parseFloat(b);
             if (checkr[0] && checkr[1]) {
-
+                // to wszystko sprawdza kolejność
                 checkr[2] = true;
+            } else {
+                checkr = [false, false, false];
             }
             alert(a * b);
         }
@@ -72,7 +76,7 @@
             a = parseFloat(a);
             b = parseFloat(b);
             if (checkr[0] && checkr[1] && checkr[2]) {
-                document.write("<h1>JP2 GMD</h1><img src=\"morda.png\">");
+                document.write("<body><h1>JP2 GMD</h1><img src=\"morda.png\" id=\"papaj\"></body>");
             }
             alert(a / b);
         }
