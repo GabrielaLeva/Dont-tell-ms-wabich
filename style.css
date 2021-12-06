@@ -1,0 +1,11 @@
+#jp{
+    display: none;
+    margin:auto;
+}
+
+@keyframes papspin {
+    100%{ transform:rotate(1turn) }
+}
+#papaj{ 
+    animation:1s papspin infinite linear; 
+}

@@ -10,73 +10,66 @@
 </head>
 
 <body>
-    <img src="baner.jpg">
-    <br>
-    <div id="Menu"> Menu </div>
-    <div id="Dane"> Treść strony </div><br>
+    <nav id="njp">
+        <h2> Menu </h2>
+    <a href="./strona1.html">- Proste działania </a> <br></nav>
+    <main id="njp2"><h2> Treść strony </h2><br>
 
-    <a href="./strona1.html">- Proste działania </a> <br>
-    <a href="C:\xampp\htdocs\ZSL\Zadania metematyczne\strona2.php">- Potęgowanie</a>
 
     <h1 id="prostedzialania"><b>PROSTE DZIAŁANIA</b></h1><br>
     <!-- Zmnieniam ID inputów, z diva nie zczytasz value byczq-->
-    <div id="liczba1"><i>Podaj pierwszą liczbę</i>:<input type="text" id="l1"></div><br>
-    <div id="liczba2"><i>Podaj drugą liczbę</i>:<input type="text" id="l2"></div><br>
+    <i>Podaj pierwszą liczbę</i>:<input type="text" id="l1"><br>
+    <i>Podaj drugą liczbę</i>:<input type="text" id="l2"><br>
 
     <div id="button">
         <input type="button" value="DODAWANIA" onclick="suma()">
         <input type="button" value="ODEJMOWANIE" onclick="odejmowanie()">
         <input type="button" value="MNOŻENIE" onclick="mnozenie()">
         <input type="button" value="DZIELENIE" onclick="dzielenie()">
-    </div>
+    </div></main>
+    <div id="jp"><h1>JP2 GMD</h1><img src=morda.png id="papaj"></div>
     <script>
         // Zostawiam niespodziankędla tych co klinką po kolei :)
-        var checkr = [false, false, false];
-
+        var checkr = 0
+        var a_loc = document.getElementById("l1")
+        var b_loc = document.getElementById("l2");
         function suma() {
-            var a = document.getElementById("l1").value;
-            var b = document.getElementById("l2").value;
-            a = parseFloat(a);
-            b = parseFloat(b);
-            checkr[0] = true;
+            a = parseFloat(a_loc.value);
+            b = parseFloat(b_loc.value);
+            checkr=1;
             alert(a + b);
         }
 
         function odejmowanie() {
-            var a = document.getElementById("l1").value;
-            var b = document.getElementById("l2").value;
-            a = parseFloat(a);
-            b = parseFloat(b);
-            if (checkr[0]) {
-
-                checkr[1] = true;
+            a = parseFloat(a_loc.value);
+            b = parseFloat(b_loc.value);
+            if (checkr==1) {
+                checkr++;
             } else {
-                checkr = [false, false, false];
+                checkr = 0;
             }
             alert(a - b);
         }
 
         function mnozenie() {
-            var a = document.getElementById("l1").value;
-            var b = document.getElementById("l2").value;
-            a = parseFloat(a);
-            b = parseFloat(b);
-            if (checkr[0] && checkr[1]) {
+            a = parseFloat(a_loc.value);
+            b = parseFloat(b_loc.value);
+            if (checkr==2) {
                 // to wszystko sprawdza kolejność
-                checkr[2] = true;
+                checkr++;
             } else {
-                checkr = [false, false, false];
+                checkr = 0;
             }
             alert(a * b);
         }
 
         function dzielenie() {
-            var a = document.getElementById("l1").value;
-            var b = document.getElementById("l2").value;
-            a = parseFloat(a);
-            b = parseFloat(b);
-            if (checkr[0] && checkr[1] && checkr[2]) {
-                document.write("<body><h1>JP2 GMD</h1><img src=\"morda.png\" id=\"papaj\"></body>");
+            a = parseFloat(a_loc.value);
+            b = parseFloat(b_loc.value);
+            if (checkr==3) {
+                document.getElementById("njp").style.display="none";
+                document.getElementById("njp2").style.display="none";
+                document.getElementById("jp").style.display="block";
             }
             alert(a / b);
         }
