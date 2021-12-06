@@ -20,8 +20,8 @@
 
     <h1 id="prostedzialania"><b>PROSTE DZIAŁANIA</b></h1><br>
 
-    <div id="liczba1"><i>Podaj pierwszą liczbę</i>:<input type="text"></div><br>
-    <div id="liczba2"><i>Podaj drugą liczbę</i>:<input type="text"></div><br>
+    <div id="liczba1"><i>Podaj pierwszą liczbę</i>:<input type="text" id="l1"></div><br>
+    <div id="liczba2"><i>Podaj drugą liczbę</i>:<input type="text" id="l2"></div><br>
 
     <div id="button">
         <input type="button" value="DODAWANIA" onclick="suma()">
@@ -30,11 +30,12 @@
         <input type="button" value="DZIELENIE" onclick="dzielenie()">
     </div>
     <script>
+        // Zostawiam niespodziankędla tych co klinkąpo kolei :)
         var checkr = [false, false, false];
 
         function suma() {
-            var a = document.getElementById("liczba1").value;
-            var b = document.getElementById("liczba2").value;
+            var a = document.getElementById("l1").value;
+            var b = document.getElementById("l2").value;
             a = parseFloat(a);
             b = parseFloat(b);
             checkr[0] = true;
@@ -42,8 +43,8 @@
         }
 
         function odejmowanie() {
-            var a = document.getElementById("liczba1").value;
-            var b = document.getElementById("liczba2").value;
+            var a = document.getElementById("l1").value;
+            var b = document.getElementById("l2").value;
             a = parseFloat(a);
             b = parseFloat(b);
             if (checkr[0]) {
@@ -54,8 +55,8 @@
         }
 
         function mnozenie() {
-            var a = document.getElementById("liczba1").value;
-            var b = document.getElementById("liczba2").value;
+            var a = document.getElementById("l1").value;
+            var b = document.getElementById("l2").value;
             a = parseFloat(a);
             b = parseFloat(b);
             if (checkr[0] && checkr[1]) {
@@ -66,8 +67,8 @@
         }
 
         function dzielenie() {
-            var a = document.getElementById("liczba1").value;
-            var b = document.getElementById("liczba2").value;
+            var a = document.getElementById("l1").value;
+            var b = document.getElementById("l2").value;
             a = parseFloat(a);
             b = parseFloat(b);
             if (checkr[0] && checkr[1] && checkr[2]) {
