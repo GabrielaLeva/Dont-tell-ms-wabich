@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="baner.jpg">
+    <br>
+    <div id="Menu"> Menu </div>
+    <div id="Dane"> Treść strony </div><br>
+
+    <a href="./strona1.html">- Proste działania </a> <br>
+    <a href="C:\xampp\htdocs\ZSL\Zadania metematyczne\strona2.php">- Potęgowanie</a>
+
+    <h1 id="prostedzialania"><b>PROSTE DZIAŁANIA</b></h1><br>
+
+    <div id="liczba1"><i>Podaj pierwszą liczbę</i>:<input type="text"></div><br>
+    <div id="liczba2"><i>Podaj drugą liczbę</i>:<input type="text"></div><br>
+
+    <div id="button">
+        <input type="button" value="DODAWANIA" onclick="suma()">
+        <input type="button" value="ODEJMOWANIE" onclick="odejmowanie()">
+        <input type="button" value="MNOŻENIE" onclick="mnozenie()">
+        <input type="button" value="DZIELENIE" onclick="dzielenie()">
+    </div>
+    <script>
+        var checkr = [false, false, false];
+
+        function suma() {
+            var a = document.getElementById("liczba1").value;
+            var b = document.getElementById("liczba2").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            checkr[0] = true;
+            alert(a + b);
+        }
+
+        function odejmowanie() {
+            var a = document.getElementById("liczba1").value;
+            var b = document.getElementById("liczba2").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            if (checkr[0]) {
+
+                checkr[1] = true;
+            }
+            alert(a - b);
+        }
+
+        function mnozenie() {
+            var a = document.getElementById("liczba1").value;
+            var b = document.getElementById("liczba2").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            if (checkr[0] && checkr[1]) {
+
+                checkr[2] = true;
+            }
+            alert(a * b);
+        }
+
+        function dzielenie() {
+            var a = document.getElementById("liczba1").value;
+            var b = document.getElementById("liczba2").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            if (checkr[0] && checkr[1] && checkr[2]) {
+                document.write("<h1>JP2 GMD</h1><img src=\"morda.png\">");
+            }
+            alert(a / b);
+        }
+    </script>
+</body>
+
+</html>
